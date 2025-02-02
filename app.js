@@ -26,18 +26,21 @@ app.get('/', (req,res) => {
 });
 
 app.get('/about', (req,res) => {
-    res.render('about', {home: true})
+    res.render('about-us', {about: true})
 });
 
-app.get('/services', (req,res) => {
-    res.render('services', {home: true})
+app.get('/listings', (req,res) => {
+    res.render('listings', {listings: true})
 })
 
-
+app.get('/blog', (req,res) => {
+    res.render('blog', {listings: true})
+})
 
 app.get('/contact', (req,res) => {
     res.render('contact', {home: true})
 })
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);  
 })
