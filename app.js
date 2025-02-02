@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const exhbs = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const path = require('path');
 const PORT = process.env.PORT || 4321;
 
@@ -25,8 +25,18 @@ app.get('/', (req,res) => {
     res.render('index', {home: true})
 });
 
-app.get('/', (req,res) => {
+app.get('/about', (req,res) => {
     res.render('about', {home: true})
+});
+
+app.get('/services', (req,res) => {
+    res.render('services', {home: true})
+})
+
+
+
+app.get('/contact', (req,res) => {
+    res.render('contact', {home: true})
 })
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);  
