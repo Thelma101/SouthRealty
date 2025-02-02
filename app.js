@@ -41,6 +41,9 @@ app.get('/contact', (req,res) => {
     res.render('contact', {home: true})
 })
 
+app.get('*', (req, res) => {
+    res.render('notfound')
+})
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);  
 })
